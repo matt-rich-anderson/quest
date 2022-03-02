@@ -16,13 +16,18 @@ namespace Quest
             //   a number of awesome points to gain or lose depending on the success of the challenge
             bool GoAgain = true;
             Console.Write("Please Enter Your Name:");
-            Robe newRobe = new Robe
+            Robe newRobe = new Robe(new List<string>{"red", "blue", "green"}, 43, "Gucci");
+            Console.WriteLine(newRobe.Brand);
+            // {
+            //     Color = new List<string>{"red", "blue", "green"},
+            //     Length = 43,
+            //     Brand = "Gucci"
+            // };
+            Hat newHat = new Hat
             {
-                Color = new List<string>{"red", "blue", "green"},
-                Length = 43
+                ShininessLevel = 5
             };
-
-            Adventurer theAdventurer = new Adventurer(Console.ReadLine(), newRobe);
+            Adventurer theAdventurer = new Adventurer(Console.ReadLine(), newRobe, newHat);
             string description = theAdventurer.GetDescription();
             Console.WriteLine(description);
             while(GoAgain)
